@@ -1,0 +1,19 @@
+version: '3.8'
+services:
+  nginx-proxy:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: nginx-proxy
+    restart: always
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    ports:
+      - '80:80'
+      - '443:443'
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external:
+      name: proxy

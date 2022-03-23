@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  alist:
+    image: luotianyi/alist:latest
+    container_name: alist
+    restart: always
+    volumes:
+      - "./data:/opt/alist/data"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external:
+      name: proxy
