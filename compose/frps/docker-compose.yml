@@ -1,0 +1,9 @@
+version: "3"
+services:
+  frps:
+    container_name: frps
+    image: luotianyi/frps:0.42.0
+    volumes:
+      - ./frps.ini:/app/frps.ini
+    command:
+      - /app/frps.ini

@@ -1,0 +1,9 @@
+version: "3"
+services:
+  frpc:
+    container_name: frpc
+    image: luotianyi/frpc:0.42.0
+    volumes:
+      - ./frpc.ini:/app/frpc.ini
+    command:
+      - /app/frpc.ini
