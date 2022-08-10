@@ -1,0 +1,14 @@
+version: 3.8
+
+services:
+  code-server:
+    container_name: code-server
+    image: codercom/code-server:latest
+    volumes:
+      - "./.config:$HOME/.config"
+      - "./workspace:$HOME/workspace"
+    user: "$USER"
+    ports:
+      - "8080:8080"
+    environment:
+      DOCKER_USER: $DOCKER_USER
